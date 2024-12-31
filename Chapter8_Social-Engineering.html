@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Engineering</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            /* Centered body text */
+        }
+
+        header {
+            background-image: url('https://i.ibb.co/txJzGVf/A-cybernetic-samurai-with-intricate-mechanical-enhancements-manipulating-a-virtual-interface-that-di.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 85vh;
+            /* Height of the header */
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            /* Center text at the bottom */
+            padding: 10px;
+            /* Padding for text */
+            color: yellow;
+            border-bottom: 5px solid #b30000;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 0px black, 4px 4px 0px red;
+            padding-bottom: 20px;
+        }
+
+        nav {
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+            /* Centered navigation */
+        }
+
+        nav h2 {
+            font-size: 2em;
+            color: #b30000;
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        ul li a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            padding: 15px;
+            border: 2px solid #b30000;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-size: 1.1em;
+        }
+
+        ul li a:hover {
+            background-color: #b30000;
+            color: yellow;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h2,
+        h3,
+        h4 {
+            color: #b30000;
+            text-align: center;
+            /* Centered section headings */
+        }
+
+        pre {
+            background-color: #282c34;
+            color: yellow;
+            padding: 15px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+            overflow-x: auto;
+            white-space: pre-wrap;
+            margin: 15px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            border-top: 5px solid #b30000;
+            width: 100%;
+        }
+
+        footer p {
+            color: yellow;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Social Engineering</h1>
+    </header>
+
+    <nav>
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#overview">8.1 Overview of Social Engineering</a></li>
+            <li><a href="#common-techniques">8.2 Common Techniques</a></li>
+            <li><a href="#tools">8.3 Tools for Social Engineering</a></li>
+            <li><a href="#preventative-measures">8.4 Preventative Measures and Awareness Training</a></li>
+            <li><a href="#summary">Summary</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h2 id="overview">8.1 Overview of Social Engineering</h2>
+        <p>
+            Social engineering exploits human psychology to gain unauthorized access to information, systems, or physical locations. Instead of breaking through security defenses, attackers trick individuals into disclosing confidential information or performing
+            actions that compromise security. The effectiveness of social engineering lies in the ability to manipulate trust and leverage social interactions.
+        </p>
+        <p>
+            Social engineering is often referred to as "hacking humans" because it targets the human element of security. It can involve various tactics, including deception, manipulation, and impersonation. The primary goals of social engineering are:
+        </p>
+        <p><strong>Information Gathering</strong>: Collecting sensitive information such as passwords, personal details, or corporate secrets.</p>
+        <p><strong>System Access</strong>: Gaining access to computer systems, networks, or physical facilities.</p>
+        <p><strong>Manipulation</strong>: Convincing individuals to perform actions that compromise security, such as clicking on malicious links or installing malware.</p>
+        <p>
+            Social engineering attacks can be highly effective because they exploit natural human behaviors and emotions, such as trust, curiosity, fear, and urgency.
+        </p>
+
+        <h3 id="common-techniques">8.2 Common Techniques</h3>
+
+        <h4>Phishing</h4>
+        <p>Phishing is a technique where attackers send fraudulent emails, messages, or websites that appear to be from legitimate sources. The goal is to trick recipients into providing sensitive information or performing actions that benefit the attacker.</p>
+        <p><strong>Types of Phishing:</strong></p>
+        <p><strong>Spear Phishing</strong>: Targeted phishing attacks aimed at specific individuals or organizations.</p>
+        <p><strong>Whaling</strong>: Phishing attacks targeting high-profile individuals, such as executives or government officials.</p>
+        <p><strong>Clone Phishing</strong>: Creating a replica of a legitimate message with malicious links or attachments.</p>
+
+        <p><strong>Example:</strong></p>
+        <pre><code>Subject: Action Required: Update Your Account Information
+
+Dear Customer,
+
+We have detected unusual activity on your account. Please click the link below to verify your account information and ensure your security.
+
+[Verify Account](http://malicious-link.com)
+
+Thank you,
+Your Bank
+</code></pre>
+
+        <p><strong>Mitigation:</strong></p>
+        <ul>
+            <li>Educate employees about the signs of phishing.</li>
+            <li>Implement email filters and anti-phishing technologies.</li>
+            <li>Encourage the verification of links and sender information before taking action.</li>
+        </ul>
+
+        <h4>Pretexting</h4>
+        <p>Pretexting involves creating a fabricated scenario (pretext) to trick individuals into disclosing information or performing actions. The attacker often poses as someone in a position of authority or trust.</p>
+
+        <p><strong>Example:</strong></p>
+        <pre><code>Attacker: "Hi, this is John from IT. We're experiencing issues with your account. Can you please provide your username and password so we can resolve it?"
+</code></pre>
+
+        <p><strong>Mitigation:</strong></p>
+        <ul>
+            <li>Implement strict verification procedures for any requests for sensitive information.</li>
+            <li>Educate employees about the risks of sharing information over the phone or email without verification.</li>
+            <li>Use multi-factor authentication to add an extra layer of security.</li>
+        </ul>
+
+        <h4>Baiting</h4>
+        <p>Baiting involves luring victims into a trap using a false promise or enticing offer. The "bait" can be anything that piques curiosity or offers value, such as free software, music downloads, or USB drives.</p>
+
+        <p><strong>Example:</strong></p>
+        <pre><code>USB Drive Label: "Confidential - Bonus Plan"
+</code></pre>
+
+        <p><strong>Mitigation:</strong></p>
+        <ul>
+            <li>Educate employees about the dangers of using unknown USB drives or downloading software from untrusted sources.</li>
+            <li>Implement security measures to block unauthorized USB devices.</li>
+            <li>Encourage reporting of suspicious items or offers.</li>
+        </ul>
+
+        <h4>Visuals and Examples</h4>
+        <ul>
+            <li><strong>Phishing Email Analysis</strong>: Show a real example of a phishing email with annotations highlighting red flags (e.g., suspicious links, poor grammar).</li>
+            <li><strong>Pretexting Flowchart</strong>: Illustrate the steps an attacker might take in a pretexting attack, from creating the pretext to gaining the victim's trust.</li>
+            <li><strong>Baiting Scenario</strong>: Visualize a scenario where an attacker leaves malicious USB drives in public areas, and an unsuspecting employee picks one up and uses it.</li>
+        </ul>
+
+        <h3 id="tools">8.3 Tools for Social Engineering</h3>
+        <p>Various tools and platforms assist attackers in conducting social engineering attacks. These tools facilitate tasks such as crafting convincing phishing emails, creating fake websites, and automating reconnaissance efforts.</p>
+
+        <h4>Social Engineering Toolkit (SET)</h4>
+        <p>The Social Engineering Toolkit (SET) is an open-source penetration testing framework specifically designed for social engineering. It automates various social engineering attacks, making it easier for attackers to exploit human behavior.</p>
+
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li><strong>Phishing</strong>: Create and send phishing emails.</li>
+            <li><strong>Website Cloning</strong>: Clone websites to capture credentials.</li>
+            <li><strong>Payload Delivery</strong>: Deliver payloads through various vectors.</li>
+        </ul>
+
+        <p><strong>Example Usage:</strong></p>
+        <pre><code>setoolkit
+</code></pre>
+        <p><strong>Cloning a Website:</strong> Follow the prompts to select the Social-Engineering Attacks > Website Attack Vectors > Credential Harvester Attack Method > Site Cloner. Enter the URL of the website to clone and the IP address for capturing
+            credentials.</p>
+
+        <h4>Gophish</h4>
+        <p>Gophish is a powerful open-source phishing framework that allows penetration testers to manage phishing campaigns, create custom email templates, and track campaign results.</p>
+
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li><strong>Campaign Management</strong>: Track the status of phishing campaigns.</li>
+            <li><strong>Email Templates</strong>: Create and customize phishing emails.</li>
+            <li><strong>Real-Time Reporting</strong>: Monitor who has opened emails, clicked links, or submitted credentials.</li>
+        </ul>
+
+        <p><strong>Example Usage:</strong></p>
+        <p><strong>Setting up a Campaign:</strong>
+            <ul>
+                <li>Launch Gophish and log into the web interface.</li>
+                <li>Create a new campaign, configure the email template, and specify target users.</li>
+                <li>Launch the campaign and monitor results.</li>
+            </ul>
+        </p>
+
+        <h4>Maltego</h4>
+        <p>Maltego is an open-source intelligence and forensics application that provides powerful tools for data mining and link analysis. It helps in gathering information and creating detailed maps of relationships and networks.</p>
+
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li><strong>Information Gathering</strong>: Collect data from various sources.</li>
+            <li><strong>Visualization</strong>: Create visual representations of relationships and entities.</li>
+            <li><strong>Integration</strong>: Integrate with other tools and data sources.</li>
+        </ul>
+
+        <p><strong>Example Usage:</strong></p>
+        <p><strong>Creating a Graph:</strong>
+            <ul>
+                <li>Open Maltego and create a new graph.</li>
+                <li>Use transforms to gather information about a domain, such as email addresses, IP addresses, and social media profiles.</li>
+                <li>Visualize the connections between different entities.</li>
+            </ul>
+        </p>
+
+        <h3 id="preventative-measures">8.4 Preventative Measures and Awareness Training</h3>
+        <p>Preventing social engineering attacks requires a combination of technical measures, policies, and user education. Organizations must create a culture of security awareness and equip employees with the knowledge and tools to recognize and respond
+            to social engineering threats.</p>
+
+        <h4>Technical Measures</h4>
+        <p><strong>Email Filtering and Anti-Phishing Solutions:</strong></p>
+        <ul>
+            <li><strong>Spam Filters</strong>: Use advanced spam filters to detect and block phishing emails.
+                <pre><code>sudo apt-get install spamassassin
+sudo systemctl start spamassassin
+sudo systemctl enable spamassassin
+</code></pre>
+            </li>
+            <li><strong>Domain-Based Message Authentication, Reporting, and Conformance (DMARC)</strong>: Implement DMARC to protect against email spoofing.
+                <pre><code>v=DMARC1; p=reject; rua=mailto:dmarc-aggregate@example.com; ruf=mailto:dmarc-afrf@example.com; adkim=s; aspf=s;</code></pre>
+            </li>
+        </ul>
+
+        <p><strong>Multi-Factor Authentication (MFA):</strong> Enable MFA to add an extra layer of security to user accounts.
+            <pre><code>aws iam update-account-password-policy --require-numbers</code></pre>
+        </p>
+
+        <p><strong>Web Filtering and URL Blocklists:</strong></p>
+        <ul>
+            <li>Implement web filtering to block access to known malicious websites.
+                <pre><code>sudo apt-get install squid
+sudo nano /etc/squid/squid.conf</code></pre>
+            </li>
+            <li>Use URL blocklists to prevent access to phishing sites.
+                <pre><code>acl bad_url dstdomain .malicious-site.com
+http_access deny bad_url</code></pre>
+            </li>
+        </ul>
+
+        <h4>Awareness Training</h4>
+        <p><strong>Regular Training Sessions:</strong> Conduct regular security awareness training sessions for employees.
+            <pre><code>Topics: Phishing, Social Engineering, Password Security, MFA</code></pre>
+        </p>
+
+        <p><strong>Simulated Phishing Campaigns:</strong> Use tools like Gophish to run simulated phishing campaigns and measure employee response.
+            <pre><code>Gophish Campaign: Create email templates, target users, and track results.</code></pre>
+        </p>
+
+        <p><strong>Clear Reporting Procedures:</strong> Establish and communicate clear procedures for reporting suspicious activities.
+            <pre><code>Report Phishing: Email security@example.com or call IT support.</code></pre>
+        </p>
+
+        <p><strong>Visual Aids and Reminders:</strong> Use posters, emails, and intranet announcements to reinforce security best practices.
+            <pre><code>Security Tips: Recognize phishing emails, verify sender information, avoid clicking on suspicious links.</code></pre>
+        </p>
+
+        <h4>Visuals and Examples</h4>
+        <ul>
+            <li><strong>Phishing Email Example</strong>: Annotate an example of a phishing email, highlighting indicators of a scam.</li>
+            <li><strong>Information Gathering Diagram</strong>: Visualize the data collection process using Maltego.</li>
+            <li><strong>Simulated Phishing Report</strong>: Show a sample report from a simulated phishing campaign using Gophish.</li>
+        </ul>
+
+        <h2 id="summary">Summary</h2>
+        <p>Social engineering remains one of the most effective methods for attackers to breach security defenses. Utilizing tools like SET, Gophish, and Maltego enhances the ability to conduct and understand social engineering attacks. However, the most
+            critical component in defending against these attacks is awareness and training. By implementing technical measures and fostering a culture of security consciousness, organizations can significantly reduce the risk posed by social engineering.</p>
+    </div>
+
+    <footer>
+        <p>© 2024 Penetration Testers Cookbook. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
