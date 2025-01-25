@@ -2,7 +2,7 @@
 
 ## 🗺️ Table of Contents
 
-1. [Introduction](https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter1/index.html)
+1. [Introduction]([https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter1/index.html](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/))
    - **1.1** Purpose of the Guide
    - **1.2** Scope of Penetration Testing
    - **1.3** Audience
