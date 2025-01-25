@@ -2,13 +2,13 @@
 
 ## 🗺️ Table of Contents
 
-1. [Introduction]([https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter1/index.html](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/))
+1. [Introduction](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter1/index.html)
    - **1.1** Purpose of the Guide
    - **1.2** Scope of Penetration Testing
    - **1.3** Audience
    - **1.4** Ethical Considerations
 
-2. [Penetration Testing Methodologies](https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter2/index.html)
+2. [Penetration Testing Methodologies](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter2/index.html)
    - **2.1** Overview of Penetration Testing
      - **2.1.1** Types of Penetration Testing
        - Black Box Testing
