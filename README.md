@@ -75,7 +75,7 @@
    - **5.5** Examples of Common Exploits
    - **5.6** Advanced Metasploit Techniques
 
-6. [Vulnerability Assessment]([https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter6/index.html](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter6_Vulnerability-Assessment.html))
+6. [Vulnerability Assessment](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter6_Vulnerability-Assessment.html)
    - **6.1** Overview of Vulnerability Assessment
    - **6.2** Scanning Techniques
    - **6.3** Common Vulnerability Scanning Tools
