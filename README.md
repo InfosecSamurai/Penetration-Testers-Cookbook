@@ -8,7 +8,7 @@
    - **1.3** Audience
    - **1.4** Ethical Considerations
 
-2. [Penetration Testing Methodologies](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter2/index.html)
+2. [Penetration Testing Methodologies](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter2_Penetration-Testing-Methodologies.html)
    - **2.1** Overview of Penetration Testing
      - **2.1.1** Types of Penetration Testing
        - Black Box Testing
@@ -22,7 +22,7 @@
      - **2.2.5** Post-Exploitation
      - **2.2.6** Reporting and Documentation
 
-3. [Tools and Technologies](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter3/index.html)
+3. [Tools and Technologies](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter3_Tools-and-Technologies.html)
    - **3.1** Overview of Penetration Testing Tools
    - **3.2** Information Gathering Tools
      - **3.2.1** Reconnaissance Tools
@@ -40,8 +40,7 @@
      - **3.6.1** Report Generation Tools
      - **3.6.2** Documentation Best Practices
 
-4. <details>
-   <summary>📡 Lateral Movement and Pivoting</summary>
+4. [Lateral Movement and Pivoting](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter4_Lateral-Movement-and-Pivoting.html)
    - **4.1** Overview of Lateral Movement
    - **4.2** Techniques for Lateral Movement
      - **4.2.1** Credential Dumping
@@ -60,7 +59,7 @@
    - **4.6** Case Studies of Successful Lateral Movement
 </details>
 
-5. [Metasploit Framework](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter5/index.html)
+5. [Metasploit Framework](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter5_Metasploit-Framework.html)
    - **5.1** Introduction to Metasploit
    - **5.2** Setting Up Metasploit
      - **5.2.1** Installation
@@ -76,14 +75,14 @@
    - **5.5** Examples of Common Exploits
    - **5.6** Advanced Metasploit Techniques
 
-6. [Vulnerability Assessment](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter6/index.html)
+6. [Vulnerability Assessment]([https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter6/index.html](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter6_Vulnerability-Assessment.html))
    - **6.1** Overview of Vulnerability Assessment
    - **6.2** Scanning Techniques
    - **6.3** Common Vulnerability Scanning Tools
    - **6.4** Interpreting Scan Results
    - **6.5** Prioritizing Vulnerabilities
 
-7. [Exploitation Techniques](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter7/index.html)
+7. [Exploitation Techniques](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter6_Vulnerability-Assessment.html)
    - **7.1** Overview of Exploitation
    - **7.2** Types of Exploits
      - Remote Code Execution
@@ -95,7 +94,7 @@
      - Lateral Movement
      - Data Exfiltration Strategies
 
-8. [Social Engineering](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter8/index.html)
+8. [Social Engineering](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter8_Social-Engineering.html)
    - **8.1** Overview of Social Engineering
    - **8.2** Common Techniques
      - Phishing
@@ -104,7 +103,7 @@
    - **8.3** Tools for Social Engineering
    - **8.4** Preventative Measures and Awareness Training
 
-9. [Reporting and Documentation](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter9/index.html)
+9. [Reporting and Documentation](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter9_Reporting-and-Documentation.html)
    - **9.1** Importance of Reporting
    - **9.2** Structure of a Penetration Test Report
      - Executive Summary
@@ -113,7 +112,7 @@
    - **9.3** Best Practices for Documentation
    - **9.4** Tools for Report Generation
 
-10. [Legal and Ethical Considerations](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter10/index.html)
+10. [Legal and Ethical Considerations](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter10_Legal-and-Ethical-Considerations.html)
     - **10.1** Understanding Legal Boundaries
     - **10.2** Compliance Frameworks
       - PCI-DSS
@@ -121,7 +120,7 @@
       - GDPR
     - **10.3** Ethical Hacking Guidelines
 
-11. [Continuous Learning and Improvement](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter11/index.html)
+11. [Continuous Learning and Improvement](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter11_Continuous-Learning-and-Improvement.html)
     - **11.1** Staying Current with Trends
     - **11.2** Recommended Resources
       - Books
@@ -132,13 +131,13 @@
       - OSCP
       - GPEN
 
-12. [Appendices](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter12/index.html)
+12. [Appendices](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter12_Appendices.html)
     - **12.1** Glossary of Terms
     - **12.2** Useful Scripts and Commands
     - **12.3** Additional Tools and Resources
     - **12.4** Contact Information for Collaborators or Mentors
 
 ### 📜 Conclusion 📜
-[Conclusion](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/conclusion.html)
+[Conclusion](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter13_Conclusion.html)
 - Summary of Key Takeaways
 - Encouragement to Practice Ethical Hacking
