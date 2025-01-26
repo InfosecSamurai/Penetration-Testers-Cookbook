@@ -22,7 +22,7 @@
      - **2.2.5** Post-Exploitation
      - **2.2.6** Reporting and Documentation
 
-3. [Tools and Technologies](https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter3/index.html)
+3. [Tools and Technologies](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter3/index.html)
    - **3.1** Overview of Penetration Testing Tools
    - **3.2** Information Gathering Tools
      - **3.2.1** Reconnaissance Tools
@@ -60,7 +60,7 @@
    - **4.6** Case Studies of Successful Lateral Movement
 </details>
 
-5. [Metasploit Framework](https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter5/index.html)
+5. [Metasploit Framework](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter5/index.html)
    - **5.1** Introduction to Metasploit
    - **5.2** Setting Up Metasploit
      - **5.2.1** Installation
@@ -76,14 +76,14 @@
    - **5.5** Examples of Common Exploits
    - **5.6** Advanced Metasploit Techniques
 
-6. [Vulnerability Assessment](https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter6/index.html)
+6. [Vulnerability Assessment](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter6/index.html)
    - **6.1** Overview of Vulnerability Assessment
    - **6.2** Scanning Techniques
    - **6.3** Common Vulnerability Scanning Tools
    - **6.4** Interpreting Scan Results
    - **6.5** Prioritizing Vulnerabilities
 
-7. [Exploitation Techniques](https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter7/index.html)
+7. [Exploitation Techniques](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter7/index.html)
    - **7.1** Overview of Exploitation
    - **7.2** Types of Exploits
      - Remote Code Execution
@@ -95,7 +95,7 @@
      - Lateral Movement
      - Data Exfiltration Strategies
 
-8. [Social Engineering](https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter8/index.html)
+8. [Social Engineering](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter8/index.html)
    - **8.1** Overview of Social Engineering
    - **8.2** Common Techniques
      - Phishing
@@ -104,7 +104,7 @@
    - **8.3** Tools for Social Engineering
    - **8.4** Preventative Measures and Awareness Training
 
-9. [Reporting and Documentation](https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter9/index.html)
+9. [Reporting and Documentation](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter9/index.html)
    - **9.1** Importance of Reporting
    - **9.2** Structure of a Penetration Test Report
      - Executive Summary
@@ -113,7 +113,7 @@
    - **9.3** Best Practices for Documentation
    - **9.4** Tools for Report Generation
 
-10. [Legal and Ethical Considerations](https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter10/index.html)
+10. [Legal and Ethical Considerations](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter10/index.html)
     - **10.1** Understanding Legal Boundaries
     - **10.2** Compliance Frameworks
       - PCI-DSS
@@ -121,7 +121,7 @@
       - GDPR
     - **10.3** Ethical Hacking Guidelines
 
-11. [Continuous Learning and Improvement](https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter11/index.html)
+11. [Continuous Learning and Improvement](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter11/index.html)
     - **11.1** Staying Current with Trends
     - **11.2** Recommended Resources
       - Books
@@ -132,13 +132,13 @@
       - OSCP
       - GPEN
 
-12. [Appendices](https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/chapter12/index.html)
+12. [Appendices](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/chapter12/index.html)
     - **12.1** Glossary of Terms
     - **12.2** Useful Scripts and Commands
     - **12.3** Additional Tools and Resources
     - **12.4** Contact Information for Collaborators or Mentors
 
 ### 📜 Conclusion 📜
-[Conclusion](https://github.com/InfosecSamurai/Penetration-Testers-Cookbook/blob/main/conclusion.html)
+[Conclusion](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/conclusion.html)
 - Summary of Key Takeaways
 - Encouragement to Practice Ethical Hacking
