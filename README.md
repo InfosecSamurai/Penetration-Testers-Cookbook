@@ -1,8 +1,8 @@
 # 🥷 Penetration Testers Cookbook 🥷
 
-## 🗺️ Table of Contents
+## 🗺️ [Table of Contents](https://infosecsamurai.github.io/Penetration-Testers-Cookbook)
 
-1. [Introduction](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/)
+1. [Introduction](https://infosecsamurai.github.io/Penetration-Testers-Cookbook/Chapter1_Introduction.html)
    - **1.1** Purpose of the Guide
    - **1.2** Scope of Penetration Testing
    - **1.3** Audience
