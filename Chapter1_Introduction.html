@@ -1,63 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penetration Testing Guide</title>
+    <title>Introduction to Penetration Testing</title>
     <style>
-        body { background-color: #000; color: #fff; font-family: 'Verdana', sans-serif; }
-        h1, h2 { color: #b30000; text-align: center; }
-        .content-section { display: none; padding: 10px; border: 1px solid #b30000; margin-top: 10px; }
-        .toggle { cursor: pointer; color: yellow; font-size: 1.2em; }
-        .toggle:hover { text-decoration: underline; }
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background-image: url('https://i.ibb.co/ygdJKCG/metasaurai.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: stretch;
+            height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: 10px;
+            text-align: center;
+            color: yellow;
+            border-bottom: 5px solid #b30000;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 0px black, 4px 4px 0px red;
+            padding-bottom: 20px;
+        }
+
+        nav {
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        nav h2 {
+            text-align: center;
+            font-size: 2em;
+            color: #b30000;
+            margin: 20px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        ul li a {
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            padding: 15px;
+            border: 2px solid #b30000;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        ul li a:hover {
+            background-color: #b30000;
+            color: yellow;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: left;
+        }
+
+        h2, h3, h4 {
+            color: #b30000;
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        pre {
+            background-color: #282c34;
+            color: yellow;
+            padding: 15px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+            overflow-x: auto;
+            margin: 15px 0;
+            white-space: pre-wrap;
+            text-align: left;
+        }
+
+        code {
+            font-family: 'Courier New', monospace;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+            border-top: 5px solid #b30000;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            color: yellow;
+        }
+
+        /* Light Mode Styles */
+        .light-mode {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .light-mode header {
+            color: black;
+            border-color: #b30000;
+        }
+
+        .light-mode ul li a {
+            color: #000;
+            border-color: #b30000;
+        }
+
+        .light-mode pre {
+            background-color: #f5f5f5;
+            color: black;
+        }
+
+        /* Toggle Button Styles */
+        .theme-toggle {
+            background-color: #b30000;
+            color: yellow;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: yellow;
+            color: #b30000;
+        }
+
+        .light-mode .theme-toggle {
+            background-color: #000;
+            color: yellow;
+        }
+
+        .light-mode .theme-toggle:hover {
+            background-color: yellow;
+            color: #000;
+        }
     </style>
+
+    <script>
+        function toggleTheme() {
+            let body = document.body;
+            body.classList.toggle('light-mode');
+
+            // Save preference to localStorage
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load user preference on page load
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-mode');
+            }
+        };
+    </script>
 </head>
+
 <body>
+    <header>
+        <h1>Introduction to Penetration Testing</h1>
+    </header>
 
-<header>
-    <h1>Penetration Testing Guide</h1>
-</header>
+    <nav>
+        <h2>Table of Contents</h2>
+        <button class="theme-toggle" onclick="toggleTheme()">Toggle Light/Dark Mode</button>
+        <ul>
+            <li><a href="#introduction">1.1 What is Penetration Testing?</a></li>
+            <li><a href="#types">1.2 Types of Penetration Testing</a></li>
+            <ul>
+                <li><a href="#black-box">1.2.1 Black Box Testing</a></li>
+                <li><a href="#white-box">1.2.2 White Box Testing</a></li>
+                <li><a href="#gray-box">1.2.3 Gray Box Testing</a></li>
+            </ul>
+            <li><a href="#methodology">1.3 Penetration Testing Methodology</a></li>
+            <ul>
+                <li><a href="#reconnaissance">1.3.1 Reconnaissance</a></li>
+                <li><a href="#scanning">1.3.2 Scanning</a></li>
+                <li><a href="#exploitation">1.3.3 Exploitation</a></li>
+                <li><a href="#post-exploitation">1.3.4 Post-Exploitation</a></li>
+                <li><a href="#reporting">1.3.5 Reporting</a></li>
+            </ul>
+            <li><a href="#tools">1.4 Essential Tools for Penetration Testing</a></li>
+            <li><a href="#legal">1.5 Legal and Ethical Considerations</a></li>
+        </ul>
+    </nav>
 
-<nav>
-    <h2>Table of Contents</h2>
-    <ul>
-        <li><a href="#purpose">1.1 Purpose of the Guide</a></li>
-        <li><a href="#scope">1.2 Scope of Penetration Testing</a></li>
-        <li><a href="#audience">1.3 Audience</a></li>
-        <li><a href="#considerations">1.4 Ethical Considerations</a></li>
-    </ul>
-</nav>
+    <div class="content">
+        <h2 id="introduction">1.1 What is Penetration Testing?</h2>
+        <p>
+            Penetration testing, or pen testing, is a simulated cyber attack against a computer system, network, or web application to identify security vulnerabilities that could be exploited by attackers. It is a critical component of a comprehensive security strategy.
+        </p>
 
-<div class="content">
-    <h2 class="toggle">1.1 Purpose of the Guide [+]</h2>
-    <div class="content-section">
-        <p>Comprehensive cybersecurity guide covering ethical hacking, penetration testing techniques, and legal frameworks.</p>
+        <h2 id="types">1.2 Types of Penetration Testing</h2>
+        <h3 id="black-box">1.2.1 Black Box Testing</h3>
+        <p>
+            In black box testing, the tester has no prior knowledge of the system being tested. This simulates an external attack by a hacker with no inside information.
+        </p>
+        <h3 id="white-box">1.2.2 White Box Testing</h3>
+        <p>
+            White box testing involves full knowledge of the system, including source code, architecture, and credentials. This is useful for identifying vulnerabilities in specific areas.
+        </p>
+        <h3 id="gray-box">1.2.3 Gray Box Testing</h3>
+        <p>
+            Gray box testing is a combination of black box and white box testing. The tester has partial knowledge of the system, simulating an attack by an insider or a hacker with limited access.
+        </p>
+
+        <h2 id="methodology">1.3 Penetration Testing Methodology</h2>
+        <h3 id="reconnaissance">1.3.1 Reconnaissance</h3>
+        <p>
+            Reconnaissance involves gathering information about the target system. This can include IP addresses, domain names, and network topology. Tools like <code>nmap</code> and <code>whois</code> are commonly used.
+        </p>
+        <pre><code>nmap -sP 192.168.1.0/24</code></pre>
+        <h3 id="scanning">1.3.2 Scanning</h3>
+        <p>
+            Scanning involves identifying open ports, services, and vulnerabilities. Tools like <code>nmap</code> and <code>Nessus</code> are used for this phase.
+        </p>
+        <pre><code>nmap -sV -O 192.168.1.1</code></pre>
+        <h3 id="exploitation">1.3.3 Exploitation</h3>
+        <p>
+            Exploitation involves attempting to exploit identified vulnerabilities. Tools like Metasploit are commonly used.
+        </p>
+        <pre><code>msfconsole
+use exploit/windows/smb/ms17_010_eternalblue
+set RHOSTS 192.168.1.1
+exploit</code></pre>
+        <h3 id="post-exploitation">1.3.4 Post-Exploitation</h3>
+        <p>
+            Post-exploitation involves maintaining access, gathering additional information, and covering tracks. Tools like <code>Meterpreter</code> are used.
+        </p>
+        <pre><code>meterpreter > hashdump</code></pre>
+        <h3 id="reporting">1.3.5 Reporting</h3>
+        <p>
+            Reporting involves documenting findings, vulnerabilities, and recommendations for remediation.
+        </p>
+
+        <h2 id="tools">1.4 Essential Tools for Penetration Testing</h2>
+        <p>
+            Some essential tools include:
+        </p>
+        <ul>
+            <li><strong>Nmap</strong>: Network scanning and enumeration.</li>
+            <li><strong>Metasploit</strong>: Exploitation framework.</li>
+            <li><strong>Wireshark</strong>: Network traffic analysis.</li>
+            <li><strong>Burp Suite</strong>: Web application testing.</li>
+        </ul>
+
+        <h2 id="legal">1.5 Legal and Ethical Considerations</h2>
+        <p>
+            Always ensure you have proper authorization before conducting a penetration test. Unauthorized testing is illegal and unethical.
+        </p>
     </div>
 
-    <h2 class="toggle">1.2 Scope of Penetration Testing [+]</h2>
-    <div class="content-section">
-        <p>Detailed breakdown of penetration testing types, methodologies, and best practices.</p>
-    </div>
-
-    <h2 class="toggle">1.3 Audience [+]</h2>
-    <div class="content-section">
-        <p>Ideal for ethical hackers, penetration testers, security analysts, and cybersecurity professionals.</p>
-    </div>
-
-    <h2 class="toggle">1.4 Ethical Considerations [+]</h2>
-    <div class="content-section">
-        <p>Discussion on responsible hacking, industry standards, and legal implications.</p>
-    </div>
-</div>
-
-<script>
-    document.querySelectorAll('.toggle').forEach(button => {
-        button.addEventListener('click', function () {
-            const content = this.nextElementSibling;
-            content.style.display = content.style.display === 'none' ? 'block' : 'none';
-        });
-    });
-</script>
-
+    <footer>
+        <p>&copy; 2025 Penetration Tester's Cookbook</p>
+    </footer>
 </body>
 </html>
