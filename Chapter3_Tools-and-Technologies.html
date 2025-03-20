@@ -13,7 +13,7 @@
             margin: 0;
             padding: 0;
             text-align: center;
-            /* Center align body text */
+            transition: background-color 0.3s, color 0.3s;
         }
 
         header {
@@ -41,7 +41,6 @@
             margin: 20px auto;
             max-width: 800px;
             text-align: center;
-            /* Center-aligned navigation text */
         }
 
         nav h2 {
@@ -53,7 +52,6 @@
             list-style: none;
             padding: 0;
             text-align: center;
-            /* Center-aligned list items */
         }
 
         ul li {
@@ -81,7 +79,6 @@
             margin: 20px auto;
             padding: 10px;
             text-align: center;
-            /* Centered content text */
         }
 
         h2,
@@ -102,7 +99,6 @@
             margin: 15px 0;
             white-space: pre-wrap;
             text-align: left;
-            /* Left-align code blocks */
         }
 
         code {
@@ -130,7 +126,6 @@
             width: 100%;
             border-collapse: collapse;
             margin: 20px auto;
-            /* Center the table */
         }
 
         table,
@@ -143,7 +138,6 @@
         td {
             padding: 10px;
             text-align: center;
-            /* Center-align table text */
         }
 
         th {
@@ -155,7 +149,77 @@
             max-width: 100%;
             height: auto;
         }
+
+        /* Light Mode Styles */
+        .light-mode {
+            background-color: #fff;
+            color: #000;
+        }
+
+        .light-mode header {
+            color: black;
+            border-color: #b30000;
+        }
+
+        .light-mode ul li a {
+            color: #000;
+            border-color: #b30000;
+        }
+
+        .light-mode pre {
+            background-color: #f5f5f5;
+            color: black;
+        }
+
+        /* Toggle Button Styles */
+        .theme-toggle {
+            background-color: #b30000;
+            color: yellow;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            margin: 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: yellow;
+            color: #b30000;
+        }
+
+        .light-mode .theme-toggle {
+            background-color: #000;
+            color: yellow;
+        }
+
+        .light-mode .theme-toggle:hover {
+            background-color: yellow;
+            color: #000;
+        }
     </style>
+
+    <script>
+        function toggleTheme() {
+            let body = document.body;
+            body.classList.toggle('light-mode');
+
+            // Save preference to localStorage
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem('theme', 'light');
+            } else {
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load user preference on page load
+        window.onload = function() {
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.add('light-mode');
+            }
+        };
+    </script>
 </head>
 
 <body>
@@ -164,6 +228,7 @@
     </header>
     <nav>
         <h2>Table of Contents</h2>
+        <button class="theme-toggle" onclick="toggleTheme()">Toggle Light/Dark Mode</button>
         <ul>
             <li><a href="#overview">3.1 Overview of Penetration Testing Tools</a></li>
             <li><a href="#info-gathering">3.2 Information Gathering Tools</a></li>
@@ -341,6 +406,7 @@ Creation Date: 2020-01-01
             </thead>
             <tbody>
                 <tr>
+                                    <tr>
                     <td>WHOIS</td>
                     <td>Passive</td>
                     <td>Registrant details and domain ownership</td>
@@ -738,7 +804,7 @@ sekurlsa::logonpasswords
         </p>
     </div>
     <footer>
-        <p>&copy; 2024 Penetration Testers Cookbook. All rights reserved.</p>
+        <p>&copy; 2025 Penetration Testers Cookbook. All rights reserved.</p>
     </footer>
 </body>
 
